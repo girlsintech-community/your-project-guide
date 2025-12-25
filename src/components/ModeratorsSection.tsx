@@ -10,7 +10,6 @@ const moderators = [
     role: "Community Manager",
     organization: "Girls Leading Tech",
     image: moderatorVijay,
-    bio: "Engineering student at Indira Gandhi Delhi Technical University specializing in Electrical and Communication Engineering with a focus on AI. Passionate about Web3, Blockchain, and public speaking.",
     linkedin: "https://www.linkedin.com/in/laxmi-vijay/",
   },
   {
@@ -18,7 +17,6 @@ const moderators = [
     role: "Content Writer Head",
     organization: "Girls Leading Tech",
     image: moderatorBagavati,
-    bio: "Information Technology undergraduate with a passion for coding and storytelling. Strong leader who thrives in team environments, sharing insights through technical writing and blogging.",
     linkedin: "https://www.linkedin.com/in/bagavati-narayanan-98484b292/",
   },
   {
@@ -26,7 +24,6 @@ const moderators = [
     role: "Builder",
     organization: "Girls Leading Tech",
     image: moderatorManik,
-    bio: "Passionate builder dedicated to empowering women in technology through community building and technical innovation.",
     linkedin: "https://www.linkedin.com/in/mrmanik/",
   },
 ];
@@ -38,7 +35,7 @@ const ModeratorsSection = () => {
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-magenta/5 rounded-full blur-3xl" />
 
       <div className="container relative z-10 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -54,12 +51,12 @@ const ModeratorsSection = () => {
               Event Moderators
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              Guiding our conversations and ensuring everyone's voice is heard.
+              Guiding our conversations and ensuring everyone's voice was heard.
             </p>
           </motion.div>
 
-          {/* Moderators Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Moderators Grid - 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {moderators.map((moderator, index) => (
               <motion.div
                 key={moderator.name}
@@ -68,10 +65,10 @@ const ModeratorsSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
               >
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-card rounded-3xl p-6 border border-border/50 hover:border-magenta/30 transition-all duration-300 hover:shadow-card">
+                <div className="flex flex-col items-center text-center bg-card rounded-3xl p-6 border border-border/50 hover:border-magenta/30 transition-all duration-300 hover:shadow-card h-full">
                   {/* Image */}
-                  <div className="relative flex-shrink-0">
-                    <div className="w-28 h-28 rounded-2xl overflow-hidden ring-4 ring-secondary">
+                  <div className="relative mb-4">
+                    <div className="w-24 h-24 rounded-2xl overflow-hidden ring-4 ring-secondary">
                       <img
                         src={moderator.image}
                         alt={moderator.name}
@@ -86,32 +83,29 @@ const ModeratorsSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="text-center sm:text-left flex-1">
-                    <div className="flex items-start justify-between mb-1">
-                      <h3 className="font-heading text-xl font-bold text-foreground">
-                        {moderator.name}
-                      </h3>
-                      {moderator.linkedin && (
-                        <a
-                          href={moderator.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-magenta transition-colors"
-                        >
-                          <Linkedin className="w-5 h-5" />
-                        </a>
-                      )}
-                    </div>
+                  <div className="flex-1">
+                    <h3 className="font-heading text-xl font-bold text-foreground mb-1">
+                      {moderator.name}
+                    </h3>
                     <p className="text-magenta font-medium text-sm mb-1">
                       {moderator.role}
                     </p>
                     <p className="text-muted-foreground text-sm mb-3">
                       {moderator.organization}
                     </p>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {moderator.bio}
-                    </p>
                   </div>
+
+                  {/* LinkedIn */}
+                  {moderator.linkedin && (
+                    <a
+                      href={moderator.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 text-muted-foreground hover:text-magenta transition-colors"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}

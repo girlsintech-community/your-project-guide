@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Clock, Users } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -16,10 +16,10 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
       </div>
 
-      {/* Floating decorative elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-coral/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-32 right-20 w-48 h-48 bg-magenta/15 rounded-full blur-3xl animate-float-delayed" />
-      <div className="absolute top-1/3 right-10 w-24 h-24 bg-rose/20 rounded-full blur-2xl animate-pulse-slow" />
+      {/* Floating decorative elements - static */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-coral/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-32 right-20 w-48 h-48 bg-magenta/15 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 right-10 w-24 h-24 bg-rose/20 rounded-full blur-2xl" />
 
       <div className="container relative z-10 px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
@@ -64,9 +64,9 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            A celebration of strength, resilience, and inclusivity. Join us for a day of 
-            inspiration, learning, and connection organized by{" "}
-            <span className="text-foreground font-semibold">Girls in Tech</span>.
+            A celebration of strength, resilience, and inclusivity. This inspiring event was 
+            organized by{" "}
+            <span className="text-foreground font-semibold">Girls Leading Tech</span>.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -79,70 +79,38 @@ const HeroSection = () => {
             <Button 
               variant="hero" 
               size="xl"
-              onClick={() => window.open("https://events.cmxhub.com/events/details/cmx-mohali-presents-empowerher-elevate-inspire-lead/", "_blank")}
+              onClick={() => document.getElementById('sessions')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Register Now
+              Watch Sessions
             </Button>
-            <Button variant="hero-outline" size="lg">
+            <Button 
+              variant="hero-outline" 
+              size="lg"
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Learn More
             </Button>
           </motion.div>
 
-          {/* Event Info Cards */}
+          {/* Event Info Card - Only Date */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-6 md:gap-10"
+            className="flex items-center justify-center"
           >
             <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-card/80 backdrop-blur-sm shadow-card">
               <div className="w-10 h-10 rounded-xl bg-coral/10 flex items-center justify-center">
                 <Calendar className="w-5 h-5 text-coral" />
               </div>
               <div className="text-left">
-                <p className="text-xs text-muted-foreground">Date</p>
+                <p className="text-xs text-muted-foreground">Event Date</p>
                 <p className="font-semibold text-foreground">March 8, 2025</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-card/80 backdrop-blur-sm shadow-card">
-              <div className="w-10 h-10 rounded-xl bg-magenta/10 flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-magenta" />
-              </div>
-              <div className="text-left">
-                <p className="text-xs text-muted-foreground">Location</p>
-                <p className="font-semibold text-foreground">Mohali, India</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-card/80 backdrop-blur-sm shadow-card">
-              <div className="w-10 h-10 rounded-xl bg-rose/10 flex items-center justify-center">
-                <Users className="w-5 h-5 text-rose" />
-              </div>
-              <div className="text-left">
-                <p className="text-xs text-muted-foreground">Community</p>
-                <p className="font-semibold text-foreground">Girls in Tech</p>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1.5 h-1.5 bg-coral rounded-full"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 };
