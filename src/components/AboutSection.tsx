@@ -26,10 +26,10 @@ const features = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-subtle-gradient relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-coral/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-magenta/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+    <section id="about" className="py-24 bg-background relative overflow-hidden">
+      {/* Decorative glass elements */}
+      <div className="absolute top-20 left-0 w-64 h-64 rounded-full glass opacity-20 -translate-x-1/2" />
+      <div className="absolute bottom-20 right-0 w-80 h-80 rounded-full glass opacity-15 translate-x-1/2" />
 
       <div className="container relative z-10 px-6">
         <div className="max-w-6xl mx-auto">
@@ -41,7 +41,7 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-sm font-semibold tracking-wider text-coral uppercase mb-4 block">
+            <span className="text-sm font-semibold tracking-wider text-primary uppercase mb-4 block">
               About The Event
             </span>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -86,7 +86,7 @@ const AboutSection = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="relative"
             >
-              <div className="bg-card rounded-3xl p-8 shadow-card border border-border/50">
+              <div className="glass-card rounded-3xl p-8">
                 <h3 className="font-heading text-2xl font-bold text-foreground mb-6">
                   A Call to Action
                 </h3>
@@ -95,7 +95,7 @@ const AboutSection = () => {
                   to stand together in solidarity, and to push forward toward a more inclusive, equal world.
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-hero-gradient flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center">
                     <Heart className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
@@ -105,7 +105,7 @@ const AboutSection = () => {
                 </div>
               </div>
               {/* Decorative accent */}
-              <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full bg-coral/10 rounded-3xl" />
+              <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full bg-primary/10 rounded-3xl" />
             </motion.div>
           </div>
 
@@ -120,9 +120,9 @@ const AboutSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="h-full bg-card rounded-2xl p-6 border border-border/50 hover:border-coral/30 transition-all duration-300 hover:shadow-card">
-                  <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-5 group-hover:bg-coral/10 transition-colors duration-300">
-                    <feature.icon className="w-7 h-7 text-coral" />
+                <div className="h-full glass-card rounded-2xl p-6 hover:shadow-glow transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors duration-300">
+                    <feature.icon className="w-7 h-7 text-primary" />
                   </div>
                   <h4 className="font-heading text-xl font-semibold text-foreground mb-3">
                     {feature.title}

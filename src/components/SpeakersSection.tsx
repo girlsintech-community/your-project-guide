@@ -62,7 +62,7 @@ const SpeakerCard = ({ speaker, index }: { speaker: typeof speakers[0]; index: n
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group"
     >
-      <div className="relative bg-card rounded-3xl overflow-hidden border border-border/50 hover:border-coral/30 transition-all duration-500 hover:shadow-card">
+      <div className="relative glass-card rounded-3xl overflow-hidden hover:shadow-glow transition-all duration-500">
         {/* Image Container */}
         <div className="relative h-80 overflow-hidden">
           <img
@@ -75,7 +75,7 @@ const SpeakerCard = ({ speaker, index }: { speaker: typeof speakers[0]; index: n
 
         {/* Content */}
         <div className="p-6 -mt-16 relative z-10">
-          <div className="bg-card rounded-2xl p-5 shadow-soft border border-border/30">
+          <div className="glass-card rounded-2xl p-5">
             <div className="flex items-start justify-between mb-1">
               <h3 className="font-heading text-xl font-bold text-foreground">
                 {speaker.name}
@@ -85,7 +85,7 @@ const SpeakerCard = ({ speaker, index }: { speaker: typeof speakers[0]; index: n
                   href={speaker.linkedin || speaker.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-coral transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   {speaker.linkedin ? (
                     <Linkedin className="w-5 h-5" />
@@ -95,7 +95,7 @@ const SpeakerCard = ({ speaker, index }: { speaker: typeof speakers[0]; index: n
                 </a>
               )}
             </div>
-            <p className="text-coral font-medium text-sm mb-1">
+            <p className="text-primary font-medium text-sm mb-1">
               {speaker.role}
             </p>
             <p className="text-muted-foreground text-sm mb-3">
@@ -105,7 +105,7 @@ const SpeakerCard = ({ speaker, index }: { speaker: typeof speakers[0]; index: n
             {/* Expandable Bio */}
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="flex items-center gap-1 text-coral text-sm font-medium hover:text-coral/80 transition-colors"
+              className="flex items-center gap-1 text-primary text-sm font-medium hover:text-primary/80 transition-colors"
             >
               {isExpanded ? "Show less" : "Learn more"}
               <ChevronDown 
@@ -137,12 +137,10 @@ const SpeakerCard = ({ speaker, index }: { speaker: typeof speakers[0]; index: n
 
 const SpeakersSection = () => {
   return (
-    <section id="speakers" className="py-24 bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/4 left-0 w-72 h-72 bg-coral/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-magenta/10 rounded-full blur-3xl" />
-      </div>
+    <section id="speakers" className="py-24 bg-sky-gradient relative overflow-hidden">
+      {/* Background glass elements */}
+      <div className="absolute top-1/4 left-0 w-48 h-48 rounded-full glass opacity-20" />
+      <div className="absolute bottom-1/4 right-0 w-64 h-64 rounded-full glass opacity-15" />
 
       <div className="container relative z-10 px-6">
         <div className="max-w-6xl mx-auto">
@@ -154,7 +152,7 @@ const SpeakersSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-sm font-semibold tracking-wider text-coral uppercase mb-4 block">
+            <span className="text-sm font-semibold tracking-wider text-primary uppercase mb-4 block">
               Meet Our Speakers
             </span>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">

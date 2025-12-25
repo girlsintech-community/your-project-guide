@@ -30,7 +30,7 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
             >
               <h3 className="font-heading text-2xl font-bold text-background mb-4">
-                Empower<span className="text-coral">Her</span>
+                Empower<span className="text-primary">Her</span>
               </h3>
               <p className="text-background/70 text-sm leading-relaxed mb-4">
                 A celebration of strength, resilience, and inclusivity. 
@@ -48,7 +48,7 @@ const Footer = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-coral hover:text-background transition-all"
+                    className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-background transition-all"
                     aria-label={link.name}
                   >
                     <link.icon className="w-4 h-4" />
@@ -58,7 +58,7 @@ const Footer = () => {
                   href="https://x.com/GirlLeadingTech"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-coral hover:text-background transition-all"
+                  className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-background transition-all"
                   aria-label="Twitter/X"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ const Footer = () => {
                         href={initiative.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-background/70 hover:text-coral transition-colors text-sm inline-flex items-center gap-1"
+                        className="text-background/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-1"
                       >
                         {initiative.name}
                         <ExternalLink className="w-3 h-3" />
@@ -113,7 +113,7 @@ const Footer = () => {
                     href="https://whatsapp.com/channel/0029VayYXL4K5cD7Zrzq052G"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-background/70 hover:text-coral transition-colors text-sm inline-flex items-center gap-2"
+                    className="text-background/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-2"
                   >
                     <MessageCircle className="w-4 h-4" />
                     WhatsApp Channel
@@ -124,7 +124,7 @@ const Footer = () => {
                     href="https://forms.gle/LL115pGiuLKYLzk26"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-background/70 hover:text-coral transition-colors text-sm inline-flex items-center gap-2"
+                    className="text-background/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-2"
                   >
                     <MessageCircle className="w-4 h-4" />
                     Join WhatsApp Community
@@ -135,7 +135,7 @@ const Footer = () => {
                     href="https://girlsintech.substack.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-background/70 hover:text-coral transition-colors text-sm inline-flex items-center gap-2"
+                    className="text-background/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-2"
                   >
                     <Mail className="w-4 h-4" />
                     Subscribe to Newsletter
@@ -152,7 +152,7 @@ const Footer = () => {
                 © {currentYear} EmpowerHer. All rights reserved.
               </p>
               <p className="text-background/50 text-sm flex items-center gap-1">
-                Made with <Heart className="w-4 h-4 text-coral fill-coral" /> by Girls Leading Tech
+                Made with <Heart className="w-4 h-4 text-primary fill-primary" /> by Girls Leading Tech
               </p>
             </div>
           </div>

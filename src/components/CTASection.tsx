@@ -1,18 +1,15 @@
 import { motion } from "framer-motion";
-import { Calendar, Heart, ExternalLink } from "lucide-react";
+import { Heart, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-hero-gradient opacity-90" />
-      
-      {/* Pattern overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-40 h-40 border border-primary-foreground/30 rounded-full" />
-        <div className="absolute bottom-20 right-20 w-60 h-60 border border-primary-foreground/20 rounded-full" />
-        <div className="absolute top-1/2 left-1/4 w-20 h-20 border border-primary-foreground/40 rounded-full" />
+    <section className="py-24 relative overflow-hidden bg-primary">
+      {/* Glass pattern overlay */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-10 left-10 w-40 h-40 rounded-full glass" />
+        <div className="absolute bottom-20 right-20 w-60 h-60 rounded-full glass" />
+        <div className="absolute top-1/2 left-1/4 w-20 h-20 rounded-full glass" />
       </div>
 
       <div className="container relative z-10 px-6">
@@ -39,14 +36,6 @@ const CTASection = () => {
               uplift, empower, and transform lives. Stay connected for future events.
             </p>
 
-            {/* Event Details */}
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-12">
-              <div className="flex items-center gap-2 text-primary-foreground/90">
-                <Calendar className="w-5 h-5" />
-                <span className="font-medium">Held on March 8, 2025</span>
-              </div>
-            </div>
-
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -56,7 +45,7 @@ const CTASection = () => {
             >
               <Button
                 size="xl"
-                className="bg-primary-foreground text-coral hover:bg-primary-foreground/90 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                 onClick={() => window.open("https://www.linkedin.com/company/girlsleadingtech", "_blank")}
               >
                 Follow Us on LinkedIn
