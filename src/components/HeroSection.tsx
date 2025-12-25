@@ -1,24 +1,30 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt="EmpowerHer abstract background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-sky-gradient">
+      {/* Floating geometric elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Large glass circles */}
+        <div className="absolute top-20 left-[10%] w-32 h-32 rounded-full glass opacity-40" />
+        <div className="absolute top-40 right-[15%] w-24 h-24 rounded-full glass opacity-30" />
+        <div className="absolute bottom-32 left-[20%] w-40 h-40 rounded-full glass opacity-35" />
+        <div className="absolute bottom-20 right-[10%] w-28 h-28 rounded-full glass opacity-25" />
+        
+        {/* Geometric shapes */}
+        <div className="absolute top-1/4 left-[5%] w-16 h-16 rotate-45 glass opacity-30" />
+        <div className="absolute top-1/3 right-[8%] w-20 h-20 rotate-12 glass opacity-25" />
+        <div className="absolute bottom-1/4 right-[25%] w-12 h-12 rotate-45 glass opacity-35" />
+        
+        {/* Subtle floating triangles */}
+        <svg className="absolute top-32 left-[30%] w-16 h-16 opacity-20" viewBox="0 0 100 100">
+          <polygon points="50,10 90,90 10,90" fill="currentColor" className="text-primary" />
+        </svg>
+        <svg className="absolute bottom-40 right-[35%] w-12 h-12 opacity-15 rotate-180" viewBox="0 0 100 100">
+          <polygon points="50,10 90,90 10,90" fill="currentColor" className="text-accent" />
+        </svg>
       </div>
-
-      {/* Floating decorative elements - static */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-coral/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-32 right-20 w-48 h-48 bg-magenta/15 rounded-full blur-3xl" />
-      <div className="absolute top-1/3 right-10 w-24 h-24 bg-rose/20 rounded-full blur-2xl" />
 
       <div className="container relative z-10 px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
@@ -27,9 +33,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/80 backdrop-blur-sm border border-coral/20 mb-8"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-card mb-8"
           >
-            <span className="text-sm font-medium text-foreground">
+            <span className="text-sm font-semibold text-foreground tracking-wide">
               Women's Day Special
             </span>
           </motion.div>
@@ -42,7 +48,7 @@ const HeroSection = () => {
             className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
           >
             <span className="text-foreground">Empower</span>
-            <span className="text-gradient">Her</span>
+            <span className="text-primary">Her</span>
           </motion.h1>
 
           {/* Tagline */}
@@ -50,7 +56,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-heading text-2xl md:text-3xl lg:text-4xl text-muted-foreground italic mb-8"
+            className="font-heading text-2xl md:text-3xl lg:text-4xl text-foreground/80 italic mb-8"
           >
             Elevate • Inspire • Lead
           </motion.p>
@@ -72,12 +78,13 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button 
               variant="hero" 
               size="xl"
               onClick={() => document.getElementById('sessions')?.scrollIntoView({ behavior: 'smooth' })}
+              className="shadow-glow"
             >
               Watch Sessions
             </Button>
@@ -85,11 +92,11 @@ const HeroSection = () => {
               variant="hero-outline" 
               size="lg"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              className="glass-card border-primary/30 hover:bg-primary/10"
             >
               Learn More
             </Button>
           </motion.div>
-
         </div>
       </div>
     </section>

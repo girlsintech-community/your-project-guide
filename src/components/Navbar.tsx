@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ExternalLink } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -31,7 +31,7 @@ const Navbar = () => {
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-background/90 backdrop-blur-md shadow-soft py-3"
+            ? "glass shadow-glass py-3"
             : "bg-transparent py-5"
         }`}
       >
@@ -40,7 +40,7 @@ const Navbar = () => {
             {/* Logo */}
             <a href="#" className="font-heading text-2xl font-bold">
               <span className="text-foreground">Empower</span>
-              <span className="text-gradient">Her</span>
+              <span className="text-primary">Her</span>
             </a>
 
             {/* Desktop Nav */}
@@ -49,7 +49,7 @@ const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                  className="text-foreground/70 hover:text-primary transition-colors font-medium"
                 >
                   {link.label}
                 </a>
@@ -87,7 +87,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-16 z-40 bg-background/95 backdrop-blur-lg shadow-lg md:hidden"
+            className="fixed inset-x-0 top-16 z-40 glass shadow-glass md:hidden"
           >
             <div className="container px-6 py-6">
               <div className="flex flex-col gap-4">
@@ -95,7 +95,7 @@ const Navbar = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-foreground font-medium py-2 hover:text-coral transition-colors"
+                    className="text-foreground font-medium py-2 hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}

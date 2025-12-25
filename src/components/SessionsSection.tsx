@@ -32,8 +32,8 @@ const sessions = [
 const SessionsSection = () => {
   return (
     <section id="sessions" className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute top-20 left-10 w-48 h-48 bg-coral/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-64 h-64 bg-magenta/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-48 h-48 rounded-full glass opacity-15" />
+      <div className="absolute bottom-20 right-10 w-64 h-64 rounded-full glass opacity-10" />
 
       <div className="container relative z-10 px-6">
         <div className="max-w-6xl mx-auto">
@@ -45,7 +45,7 @@ const SessionsSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-sm font-semibold tracking-wider text-coral uppercase mb-4 block">
+            <span className="text-sm font-semibold tracking-wider text-primary uppercase mb-4 block">
               Event Recordings
             </span>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -70,7 +70,7 @@ const SessionsSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group block"
               >
-                <div className="bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-coral/30 transition-all duration-300 hover:shadow-card">
+                <div className="glass-card rounded-2xl overflow-hidden hover:shadow-glow transition-all duration-300">
                   {/* Thumbnail */}
                   <div className="relative aspect-video overflow-hidden">
                     <img
@@ -78,12 +78,11 @@ const SessionsSection = () => {
                       alt={session.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       onError={(e) => {
-                        // Fallback to hqdefault if maxresdefault doesn't exist
                         e.currentTarget.src = `https://img.youtube.com/vi/${session.videoId}/hqdefault.jpg`;
                       }}
                     />
-                    <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-coral flex items-center justify-center shadow-lg">
+                    <div className="absolute inset-0 bg-foreground/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg">
                         <Play className="w-8 h-8 text-primary-foreground fill-current ml-1" />
                       </div>
                     </div>
@@ -91,7 +90,7 @@ const SessionsSection = () => {
 
                   {/* Content */}
                   <div className="p-5">
-                    <h3 className="font-heading text-lg font-semibold text-foreground group-hover:text-coral transition-colors line-clamp-2">
+                    <h3 className="font-heading text-lg font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
                       {session.title}
                     </h3>
                     <div className="flex items-center gap-2 mt-3 text-muted-foreground text-sm">
