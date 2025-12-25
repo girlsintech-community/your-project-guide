@@ -65,7 +65,7 @@ const CTASection = () => {
             </motion.div>
 
             <p className="text-primary-foreground/70 text-sm mt-6">
-              Virtual event • Open to all genders • Organized by Girls Leading Tech
+              Virtual event • Organized by Girls Leading Tech
             </p>
           </motion.div>
         </div>

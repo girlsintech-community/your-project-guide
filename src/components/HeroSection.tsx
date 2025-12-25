@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -30,9 +29,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/80 backdrop-blur-sm border border-coral/20 mb-8"
           >
-            <Calendar className="w-4 h-4 text-coral" />
             <span className="text-sm font-medium text-foreground">
-              March 8, 2025 • International Women's Day
+              Women's Day Special
             </span>
           </motion.div>
 
@@ -66,7 +64,7 @@ const HeroSection = () => {
           >
             A celebration of strength, resilience, and inclusivity. This inspiring event was 
             organized by{" "}
-            <span className="text-foreground font-semibold">Girls Leading Tech</span>.
+            <span className="text-foreground font-semibold">Girls Leading Tech</span> on March 8, 2025.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -92,23 +90,6 @@ const HeroSection = () => {
             </Button>
           </motion.div>
 
-          {/* Event Info Card - Only Date */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex items-center justify-center"
-          >
-            <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-card/80 backdrop-blur-sm shadow-card">
-              <div className="w-10 h-10 rounded-xl bg-coral/10 flex items-center justify-center">
-                <Calendar className="w-5 h-5 text-coral" />
-              </div>
-              <div className="text-left">
-                <p className="text-xs text-muted-foreground">Event Date</p>
-                <p className="font-semibold text-foreground">March 8, 2025</p>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
