@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
 import moderatorVijay from "@/assets/moderator-vijay.jpg";
 import moderatorBagavati from "@/assets/moderator-bagavati.jpg";
+import moderatorManik from "@/assets/moderator-manik.jpg";
 
 const moderators = [
   {
@@ -9,6 +11,7 @@ const moderators = [
     organization: "Girls Leading Tech",
     image: moderatorVijay,
     bio: "Engineering student at Indira Gandhi Delhi Technical University specializing in Electrical and Communication Engineering with a focus on AI. Passionate about Web3, Blockchain, and public speaking.",
+    linkedin: "https://www.linkedin.com/in/laxmi-vijay/",
   },
   {
     name: "Bagavati Narayanan",
@@ -16,6 +19,15 @@ const moderators = [
     organization: "Girls Leading Tech",
     image: moderatorBagavati,
     bio: "Information Technology undergraduate with a passion for coding and storytelling. Strong leader who thrives in team environments, sharing insights through technical writing and blogging.",
+    linkedin: "https://www.linkedin.com/in/bagavati-narayanan-98484b292/",
+  },
+  {
+    name: "Manik",
+    role: "Builder",
+    organization: "Girls Leading Tech",
+    image: moderatorManik,
+    bio: "Passionate builder dedicated to empowering women in technology through community building and technical innovation.",
+    linkedin: "https://www.linkedin.com/in/mrmanik/",
   },
 ];
 
@@ -74,10 +86,22 @@ const ModeratorsSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="text-center sm:text-left">
-                    <h3 className="font-heading text-xl font-bold text-foreground mb-1">
-                      {moderator.name}
-                    </h3>
+                  <div className="text-center sm:text-left flex-1">
+                    <div className="flex items-start justify-between mb-1">
+                      <h3 className="font-heading text-xl font-bold text-foreground">
+                        {moderator.name}
+                      </h3>
+                      {moderator.linkedin && (
+                        <a
+                          href={moderator.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-magenta transition-colors"
+                        >
+                          <Linkedin className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
                     <p className="text-magenta font-medium text-sm mb-1">
                       {moderator.role}
                     </p>

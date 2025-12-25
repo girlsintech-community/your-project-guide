@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Facebook } from "lucide-react";
 
 import speakerNidhi from "@/assets/speaker-nidhi.jpg";
 import speakerShilpi from "@/assets/speaker-shilpi.jpg";
@@ -15,6 +15,7 @@ const speakers = [
     image: speakerNidhi,
     bio: "Serial entrepreneur from Silicon Valley with 22+ years of venture-building experience. Named in Niti Aayog's 'Top 100 Women Transforming India'. TEDx speaker and mentor to 1000+ women entrepreneurs.",
     highlight: "Top 100 Women Transforming India",
+    linkedin: "https://www.linkedin.com/in/nidhibanthiamehta/",
   },
   {
     name: "Shilpi Mitra",
@@ -31,6 +32,7 @@ const speakers = [
     image: speakerRajini,
     bio: "Corporate trainer in Cloud and Generative AI, award-winning author of 'Friction-Free Parenting'. Keynote speaker reaching over 1 million learners worldwide.",
     highlight: "1M+ Learners Reached",
+    linkedin: "https://www.linkedin.com/in/rameshrajini/",
   },
   {
     name: "Madhu Sathvik",
@@ -39,6 +41,7 @@ const speakers = [
     image: speakerMadhu,
     bio: "Certified yoga trainer, lifestyle coach, and wellness expert dedicated to holistic well-being. Blends traditional yogic practices with modern wellness strategies.",
     highlight: "Wellness Expert",
+    facebook: "https://www.facebook.com/madhu.sathvik/",
   },
   {
     name: "Dr. Naga Swathi T.J",
@@ -47,6 +50,7 @@ const speakers = [
     image: speakerNaga,
     bio: "Veteran strategist with nearly 20 years driving digital transformation for 200+ global customers. Award-winning author and energy transformation coach.",
     highlight: "200+ Global Customers",
+    linkedin: "https://www.linkedin.com/in/drnagaswathitj/",
   },
 ];
 
@@ -113,9 +117,25 @@ const SpeakersSection = () => {
                   {/* Content */}
                   <div className="p-6 -mt-16 relative z-10">
                     <div className="bg-card rounded-2xl p-5 shadow-soft border border-border/30">
-                      <h3 className="font-heading text-xl font-bold text-foreground mb-1">
-                        {speaker.name}
-                      </h3>
+                      <div className="flex items-start justify-between mb-1">
+                        <h3 className="font-heading text-xl font-bold text-foreground">
+                          {speaker.name}
+                        </h3>
+                        {(speaker.linkedin || speaker.facebook) && (
+                          <a
+                            href={speaker.linkedin || speaker.facebook}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-coral transition-colors"
+                          >
+                            {speaker.linkedin ? (
+                              <Linkedin className="w-5 h-5" />
+                            ) : (
+                              <Facebook className="w-5 h-5" />
+                            )}
+                          </a>
+                        )}
+                      </div>
                       <p className="text-coral font-medium text-sm mb-1">
                         {speaker.role}
                       </p>
