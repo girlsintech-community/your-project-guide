@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Speakers", href: "#speakers" },
+  { label: "Sessions", href: "#sessions" },
   { label: "Moderators", href: "#moderators" },
 ];
 
@@ -56,10 +57,9 @@ const Navbar = () => {
               <Button
                 size="sm"
                 variant="hero"
-                onClick={() => window.open("https://events.cmxhub.com/events/details/cmx-mohali-presents-empowerher-elevate-inspire-lead/", "_blank")}
+                onClick={() => document.getElementById('sessions')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Register
-                <ExternalLink className="w-4 h-4 ml-1" />
+                Watch Sessions
               </Button>
             </div>
 
@@ -105,12 +105,11 @@ const Navbar = () => {
                   variant="hero"
                   className="mt-2"
                   onClick={() => {
-                    window.open("https://events.cmxhub.com/events/details/cmx-mohali-presents-empowerher-elevate-inspire-lead/", "_blank");
+                    document.getElementById('sessions')?.scrollIntoView({ behavior: 'smooth' });
                     setIsMobileMenuOpen(false);
                   }}
                 >
-                  Register Now
-                  <ExternalLink className="w-4 h-4 ml-1" />
+                  Watch Sessions
                 </Button>
               </div>
             </div>
