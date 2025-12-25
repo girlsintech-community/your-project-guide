@@ -24,7 +24,7 @@ const Footer = () => {
                 Elevate • Inspire • Lead
               </p>
               <p className="text-background/50 text-xs">
-                Organized by Girls in Tech
+                Organized by Girls Leading Tech
               </p>
             </motion.div>
 
@@ -84,12 +84,12 @@ const Footer = () => {
                   International Women's Day
                 </li>
                 <li>
-                  <span className="text-background/50">Location:</span>{" "}
-                  Mohali, India
+                  <span className="text-background/50">Format:</span>{" "}
+                  Virtual Event
                 </li>
                 <li>
                   <span className="text-background/50">Organized by:</span>{" "}
-                  Girls in Tech
+                  Girls Leading Tech
                 </li>
               </ul>
             </motion.div>
