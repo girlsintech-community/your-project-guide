@@ -23,7 +23,7 @@ const sessions = [
     videoId: "QTazZvDYFAw",
   },
   {
-    title: "Discussion on Mental Health | By Madhu Sathvik",
+    title: "Discussion on Mental Health",
     youtubeUrl: "https://youtu.be/0BBn6bgb_F8?si=IbKFLKlTlOhrHW9Y",
     videoId: "0BBn6bgb_F8",
   },
