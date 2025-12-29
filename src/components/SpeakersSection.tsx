@@ -64,7 +64,7 @@ const SpeakerCard = ({ speaker, index }: { speaker: typeof speakers[0]; index: n
     >
       <div className="relative glass-card rounded-3xl overflow-hidden hover:shadow-glow transition-all duration-500">
         {/* Image Container */}
-        <div className="relative h-80 overflow-hidden">
+        <div className="relative h-52 overflow-hidden">
           <img
             src={speaker.image}
             alt={speaker.name}
@@ -165,9 +165,11 @@ const SpeakersSection = () => {
           </motion.div>
 
           {/* Speakers Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-6">
             {speakers.map((speaker, index) => (
-              <SpeakerCard key={speaker.name} speaker={speaker} index={index} />
+              <div key={speaker.name} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-20px)] min-w-[220px] max-w-[280px]">
+                <SpeakerCard speaker={speaker} index={index} />
+              </div>
             ))}
           </div>
         </div>

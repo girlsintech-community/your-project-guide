@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
+              className="group w-full md:w-[calc(50%-12px)] lg:w-auto lg:max-w-sm"
             >
               <div className="h-full p-6 rounded-2xl bg-white/60 backdrop-blur-md border border-white/40 shadow-glass hover:shadow-glass-lg transition-all duration-300">
                 <Quote className="w-8 h-8 text-primary/30 mb-4" />
