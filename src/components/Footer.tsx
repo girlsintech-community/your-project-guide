@@ -8,6 +8,7 @@ const Footer = () => {
     { name: "Global AI Buildathon", url: "https://global-ai-buildathon.girlsleadingtech.com/" },
     { name: "Hack Aura", url: "https://hackaura.girlsleadingtech.com/" },
     { name: "Code at Christmas", url: "https://codeatchristmas.girlsleadingtech.com/" },
+    { name: "Hack My Valentine", url: "https://hackmyvalentine.girlsleadingtech.com/" },
     { name: "ML Cohort", url: null },
   ];
 
