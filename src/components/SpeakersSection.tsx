@@ -164,12 +164,10 @@ const SpeakersSection = () => {
             </p>
           </motion.div>
 
-          {/* Speakers Grid */}
-          <div className="flex flex-wrap justify-center gap-6">
+          {/* Speakers Grid - 3 per row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {speakers.map((speaker, index) => (
-              <div key={speaker.name} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-20px)] min-w-[220px] max-w-[280px]">
-                <SpeakerCard speaker={speaker} index={index} />
-              </div>
+              <SpeakerCard key={speaker.name} speaker={speaker} index={index} />
             ))}
           </div>
         </div>
