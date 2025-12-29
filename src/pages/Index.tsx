@@ -5,7 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import SpeakersSection from "@/components/SpeakersSection";
 import SessionsSection from "@/components/SessionsSection";
 import ModeratorsSection from "@/components/ModeratorsSection";
-import StatsSection from "@/components/StatsSection";
+import ImpactSection from "@/components/ImpactSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -40,7 +40,7 @@ const Index = () => {
         <SpeakersSection />
         <SessionsSection />
         <ModeratorsSection />
-        <StatsSection />
+        <ImpactSection />
         <TestimonialsSection />
         <CTASection />
         <Footer />
